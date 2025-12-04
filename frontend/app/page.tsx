@@ -1,65 +1,129 @@
+"use client";
+
 import Image from "next/image";
+import { useState } from "react";
 
 export default function Home() {
+  const [file, setFile] = useState<File | null>(null);
+  const [dropRows, setDropRows] = useState(true);
+  const [dropColumns, setDropColumns] = useState(true);
+  const [cleanStrings, setCleanStrings] = useState(true);
+  const [imputeCats, setImputeCats] = useState(true);
+  const [imputeNums, setImputeNums] = useState(true);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!file) return;
+
+    const formData = new FormData();
+    formData.append("file", file);
+    formData.append("drop_rows", String(dropRows));
+    formData.append("drop_columns", String(dropColumns));
+    formData.append("clean_strings", String(cleanStrings));
+    formData.append("impute_cats", String(imputeCats));
+    formData.append("impute_nums", String(imputeNums));
+
+    const res = await fetch("http://localhost:8000/clean-data", {
+      method: "POST",
+      body: formData,
+    });
+
+    if (!res.ok) {
+      console.error("Error cleaning data");
+      return;
+    }
+
+    // Get cleaned CSV blob and trigger download
+    const blob = await res.blob();
+    const url = window.URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "cleaned_data.csv";
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    window.URL.revokeObjectURL(url);
+  };
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+    <main style={{ padding: 20 }} className="text-center">
+      <h1 className="text-4xl mb-5">Data Cleaning Tool</h1>
+      <form onSubmit={handleSubmit}>
+        <div>
+          <label>
+            File:
+            <input
+              type="file"
+              accept=".csv,.xls,.xlsx"
+              onChange={(e) => {
+                if (e.target.files && e.target.files[0]) {
+                  setFile(e.target.files[0]);
+                }
+              }}
+              className="bg-gray-900 p-10 rounded-3xl"
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+          </label>
         </div>
-      </main>
-    </div>
+
+        <div>
+          <label>
+            <input
+              type="checkbox"
+              checked={dropRows}
+              onChange={(e) => setDropRows(e.target.checked)}
+            />
+            Drop blank rows
+          </label>
+        </div>
+
+        <div>
+          <label>
+            <input
+              type="checkbox"
+              checked={dropColumns}
+              onChange={(e) => setDropColumns(e.target.checked)}
+            />
+            Drop blank columns
+          </label>
+        </div>
+
+        <div>
+          <label>
+            <input
+              type="checkbox"
+              checked={cleanStrings}
+              onChange={(e) => setCleanStrings(e.target.checked)}
+            />
+            Clean gibberish strings
+          </label>
+        </div>
+
+        <div>
+          <label>
+            <input
+              type="checkbox"
+              checked={imputeCats}
+              onChange={(e) => setImputeCats(e.target.checked)}
+            />
+            Impute categorical values
+          </label>
+        </div>
+
+        <div>
+          <label>
+            <input
+              type="checkbox"
+              checked={imputeNums}
+              onChange={(e) => setImputeNums(e.target.checked)}
+            />
+            Impute numeric values (KNN)
+          </label>
+        </div>
+
+        <button type="submit" className="bg-green-700 px-3 py-1.5 rounded-xl">
+          Clean Data
+        </button>
+      </form>
+    </main>
   );
 }
