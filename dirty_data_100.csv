@@ -1,0 +1,101 @@
+ID,Name,Age,Salary,Department,City,Empty_Col_1,Empty_Col_2,Junk_Col
+1.0,Alice,39.0,69831.0,HR,Phoenix,,,..
+2.0,David,35.0,65313.0,Finance,San Diego,,,###
+3.0,Bob,58.0,76517.0,   ,@!@!,,,@!@!
+4.0,Ian,37.0,76585.0,HR,San Jose,,,****
+5.0,,48.0,106768.0,HR,Houston,,,..
+6.0,Alice,28.0,110282.0,Engineering,Dallas,,,
+7.0,,44.0,43617.0,HR,Chicago,,,###
+8.0,Jack,51.0,,Engineering,Chicago,,,###
+9.0,,25.0,63405.0,HR,###,,,###
+10.0,Ian,28.0,74795.0,Engineering,San Jose,,,---
+11.0,Hannah,,,Sales,San Jose,,,
+12.0,Alice,28.0,85309.0,Engineering,San Diego,,,..
+13.0,Charlie,34.0,81114.0,HR,N/A,,,
+14.0,Frank,30.0,107033.0,Engineering,Phoenix,,,@!@!
+15.0,David,39.0,,HR,San Diego,,,unknown_val
+,,,,,,,,
+17.0,Grace,57.0,97154.0,Marketing,..,,,###
+18.0,,,,Engineering,San Jose,,,@!@!
+19.0,Jack,56.0,110575.0,@!@!,Los Angeles,,,unknown_val
+20.0,Alice,27.0,65825.0,Sales,San Jose,,,N/A
+21.0,Ian,37.0,49171.0,Finance,New York,,,unknown_val
+22.0,Grace,53.0,83279.0,Finance,Phoenix,,,N/A
+23.0,,47.0,56334.0,Sales,Chicago,,,???
+24.0,Jack,32.0,79363.0,Sales,San Diego,,,unknown_val
+25.0,Frank,46.0,93528.0,   ,Chicago,,,N/A
+26.0,Bob,51.0,78752.0,..,San Antonio,,,****
+27.0,,57.0,65144.0,HR,San Diego,,,###
+28.0,Eva,53.0,89695.0,Sales,San Diego,,,---
+29.0,David,40.0,62810.0,Marketing,Philadelphia,,,unknown_val
+30.0,Grace,25.0,79446.0,Marketing,Los Angeles,,,   
+31.0,Frank,56.0,40053.0,Finance,Philadelphia,,,
+32.0,Frank,,67549.0,Sales,San Diego,,,N/A
+33.0,Eva,25.0,116019.0,Finance,San Antonio,,,..
+,,,,,,,,
+35.0,Charlie,55.0,97954.0,Finance,---,,,unknown_val
+36.0,David,54.0,107000.0,Engineering,Philadelphia,,,N/A
+37.0,Grace,,62241.0,HR,..,,,@!@!
+38.0,Ian,60.0,77196.0,Marketing,New York,,,..
+39.0,Frank,,83933.0,Marketing,Dallas,,,unknown_val
+40.0,Alice,47.0,,Marketing,New York,,,---
+41.0,Alice,,70784.0,Marketing,   ,,,@!@!
+42.0,Grace,37.0,69444.0,Engineering,San Diego,,,..
+43.0,David,24.0,59313.0,Sales,New York,,,
+44.0,Jack,48.0,,Sales,Dallas,,,   
+45.0,Frank,58.0,102277.0,Finance,N/A,,,
+46.0,Hannah,38.0,49545.0,Sales,San Diego,,,N/A
+47.0,Hannah,42.0,115454.0,Finance,,,,N/A
+,,,,,,,,
+49.0,Ian,,71979.0,Marketing,New York,,,..
+50.0,Jack,51.0,,Engineering,Los Angeles,,,N/A
+51.0,Jack,26.0,53970.0,Marketing,Los Angeles,,,???
+52.0,David,,68683.0,HR,Los Angeles,,,
+53.0,Charlie,58.0,107889.0,@!@!,Chicago,,,???
+54.0,Bob,26.0,113060.0,Engineering,Phoenix,,,
+55.0,Bob,54.0,55906.0,Finance,Phoenix,,,unknown_val
+56.0,Charlie,44.0,100901.0,Finance,San Diego,,,N/A
+57.0,Grace,37.0,113259.0,Marketing,Houston,,,@!@!
+58.0,Grace,32.0,98008.0,Finance,Chicago,,,
+,,,,,,,,
+60.0,Ian,55.0,111810.0,Sales,Chicago,,,@!@!
+61.0,Alice,,60861.0,Engineering,Phoenix,,,@!@!
+62.0,Bob,41.0,102216.0,Finance,San Antonio,,,
+63.0,Ian,28.0,72406.0,Engineering,Dallas,,,N/A
+64.0,Frank,30.0,76347.0,Marketing,New York,,,###
+65.0,Grace,28.0,108327.0,Finance,Phoenix,,,---
+66.0,Alice,31.0,71358.0,Finance,San Jose,,,???
+67.0,Eva,60.0,50155.0,HR,San Diego,,,N/A
+68.0,Charlie,43.0,70735.0,Sales,San Diego,,,unknown_val
+,,,,,,,,
+70.0,Eva,38.0,50561.0,Finance,Dallas,,,
+71.0,Ian,25.0,,HR,Philadelphia,,,   
+72.0,Charlie,,60028.0,Finance,Houston,,,###
+73.0,Charlie,39.0,48418.0,Engineering,Houston,,,---
+74.0,Ian,,83369.0,Marketing,San Antonio,,,N/A
+75.0,Jack,30.0,94496.0,HR,unknown_val,,,   
+76.0,Alice,38.0,,Marketing,San Antonio,,,..
+77.0,Frank,50.0,91049.0,Sales,Chicago,,,###
+78.0,Eva,49.0,116556.0,HR,New York,,,@!@!
+79.0,David,29.0,42560.0,Marketing,,,,###
+80.0,Bob,,115456.0,HR,Los Angeles,,,****
+81.0,,31.0,40772.0,HR,San Diego,,,   
+82.0,Bob,45.0,79139.0,HR,unknown_val,,,****
+83.0,Ian,31.0,94921.0,Finance,###,,,****
+84.0,Charlie,24.0,111582.0,HR,Chicago,,,N/A
+85.0,Ian,24.0,68906.0,HR,N/A,,,###
+86.0,Ian,35.0,75774.0,Marketing,San Antonio,,,N/A
+87.0,Grace,28.0,43804.0,Finance,Philadelphia,,,unknown_val
+88.0,Ian,57.0,92994.0,Finance,Dallas,,,N/A
+89.0,David,48.0,101261.0,Marketing,Philadelphia,,,   
+90.0,Grace,31.0,110008.0,Finance,San Diego,,,---
+91.0,Frank,37.0,,Sales,New York,,,unknown_val
+92.0,Ian,33.0,113975.0,HR,Houston,,,---
+93.0,David,23.0,51003.0,HR,Phoenix,,,###
+94.0,Frank,43.0,57786.0,Engineering,Los Angeles,,,@!@!
+95.0,,48.0,63819.0,Sales,Los Angeles,,,..
+96.0,Jack,37.0,,Engineering,Los Angeles,,,****
+97.0,Bob,28.0,67742.0,Finance,Phoenix,,,   
+98.0,Alice,24.0,84236.0,???,New York,,,---
+99.0,Alice,36.0,89692.0,Finance,New York,,,..
+100.0,Bob,51.0,95255.0,HR,Philadelphia,,,???
